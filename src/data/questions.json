@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "event_name": "遵义会议",
+    "date": "1935-01",
+    "latitude": 27.706,
+    "longitude": 106.927,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "1935年1月，中共中央政治局在贵州遵义召开扩大会议，结束了“左”倾教条主义在中央的统治，在极端危急的历史关头挽救了党和红军。"
+  },
+  {
+    "id": 2,
+    "event_name": "强渡乌江",
+    "date": "1935-01",
+    "latitude": 27.45,
+    "longitude": 107.88,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "中央红军突破国民党军乌江防线，为进军遵义、召开遵义会议创造了条件。"
+  },
+  {
+    "id": 3,
+    "event_name": "四渡赤水",
+    "date": "1935-03",
+    "latitude": 28.59,
+    "longitude": 105.39,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "红军在川黔滇边境机动迂回，四渡赤水河，摆脱了敌军重兵围堵，是长征中著名的运动战范例。"
+  },
+  {
+    "id": 4,
+    "event_name": "巧渡金沙江",
+    "date": "1935-05",
+    "latitude": 26.83,
+    "longitude": 101.75,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "红军利用七条小船等工具，在皎平渡等地渡过金沙江，跳出了数十万敌军的包围圈。"
+  },
+  {
+    "id": 5,
+    "event_name": "强渡大渡河",
+    "date": "1935-05",
+    "latitude": 29.0,
+    "longitude": 102.35,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "红军在安顺场等地强渡大渡河，为北上开辟通道，与后续飞夺泸定桥等行动紧密相连。"
+  },
+  {
+    "id": 6,
+    "event_name": "飞夺泸定桥",
+    "date": "1935-05",
+    "latitude": 29.914,
+    "longitude": 102.234,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "红四团沿大渡河西岸疾进，夺占泸定桥，保障主力渡河，是长征中惊心动魄的战斗之一。"
+  },
+  {
+    "id": 7,
+    "event_name": "翻越夹金山",
+    "date": "1935-06",
+    "latitude": 30.68,
+    "longitude": 102.84,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "中央红军翻越终年积雪的夹金山（岷山山脉），与红四方面军在懋功地区会师。"
+  },
+  {
+    "id": 8,
+    "event_name": "过草地（川西北）",
+    "date": "1935-08",
+    "latitude": 32.79,
+    "longitude": 102.55,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "红军在川西北高原穿越沼泽草地，缺粮缺氧、气候恶劣，付出巨大牺牲仍保持行军与战斗队形。"
+  },
+  {
+    "id": 9,
+    "event_name": "俄界会议",
+    "date": "1935-09",
+    "latitude": 34.06,
+    "longitude": 104.25,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "中共中央在甘肃迭部俄界召开政治局扩大会议，统一北上战略方针，为继续长征指明方向。"
+  },
+  {
+    "id": 10,
+    "event_name": "腊子口战斗",
+    "date": "1935-09",
+    "latitude": 34.3,
+    "longitude": 103.9,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "红军突破甘南天险腊子口，打开北上通道，为进入陕甘地区创造条件。"
+  },
+  {
+    "id": 11,
+    "event_name": "吴起镇会师",
+    "date": "1935-10",
+    "latitude": 36.927,
+    "longitude": 108.176,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "中央红军抵达陕北吴起镇，与陕北红军胜利会师，中央红军长征胜利结束。"
+  },
+  {
+    "id": 12,
+    "event_name": "甘孜会师（红二、四方面军）",
+    "date": "1936-07",
+    "latitude": 31.62,
+    "longitude": 99.99,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "红二、红六军团与红四方面军在甘孜地区会师，随后共同北上，为三大主力会师奠定基础。"
+  },
+  {
+    "id": 13,
+    "event_name": "瑞金出发",
+    "date": "1934-10",
+    "latitude": 25.85,
+    "longitude": 116.02,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "1934年10月，中央红军从江西瑞金等地出发，开始战略转移，长征正式开始。"
+  },
+  {
+    "id": 14,
+    "event_name": "湘江战役",
+    "date": "1934-11",
+    "latitude": 25.43,
+    "longitude": 110.52,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "红军在广西北部湘江两岸与敌军激战，损失惨重但突破了国民党军的第四道封锁线。"
+  },
+  {
+    "id": 15,
+    "event_name": "通道会议",
+    "date": "1934-12",
+    "latitude": 26.15,
+    "longitude": 109.78,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "中央红军在湖南通道召开会议，讨论战略方向，决定放弃北上与红二、六军团会合的原定计划。"
+  },
+  {
+    "id": 16,
+    "event_name": "扎西会议",
+    "date": "1935-02",
+    "latitude": 27.83,
+    "longitude": 105.4,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "中共中央在云南扎西召开政治局扩大会议，总结土城战斗经验，讨论中央红军缩编问题。"
+  },
+  {
+    "id": 17,
+    "event_name": "渡过北盘江",
+    "date": "1935-04",
+    "latitude": 25.1,
+    "longitude": 105.5,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "中央红军在云南贵州边境渡过北盘江，甩开敌军追兵，向金沙江方向急进。"
+  },
+  {
+    "id": 18,
+    "event_name": "彝海结盟",
+    "date": "1935-05",
+    "latitude": 28.55,
+    "longitude": 102.18,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "刘伯承与彝族首领小叶丹在彝海畔结盟，红军顺利通过彝族聚居区，为抢渡大渡河创造了条件。"
+  },
+  {
+    "id": 19,
+    "event_name": "红四方面军出发长征",
+    "date": "1935-03",
+    "latitude": 31.85,
+    "longitude": 106.75,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "红四方面军在四川北部发起嘉陵江战役，随后退出川陕革命根据地，开始长征。"
+  },
+  {
+    "id": 20,
+    "event_name": "抢占通渭",
+    "date": "1935-09",
+    "latitude": 35.24,
+    "longitude": 105.24,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "红四方面军先头部队抢占甘肃通渭县城，为迎接中央红军进入甘肃创造条件。"
+  },
+  {
+    "id": 21,
+    "event_name": "红二方面军开始长征",
+    "date": "1935-11",
+    "latitude": 27.52,
+    "longitude": 109.74,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "红二、六军团从湖南桑植出发，开始长征，后改编为红二方面军。"
+  },
+  {
+    "id": 22,
+    "event_name": "渡过普渡河",
+    "date": "1936-04",
+    "latitude": 25.58,
+    "longitude": 101.92,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "红二方面军渡过云南普渡河，突破敌军围堵，向金沙江上游挺进。"
+  },
+  {
+    "id": 23,
+    "event_name": "得策会议",
+    "date": "1935-06",
+    "latitude": 30.95,
+    "longitude": 103.15,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "中央红军与红四方面军在四川懋功以北的达维镇会师，召开得策会议，确定北上抗日方针。"
+  },
+  {
+    "id": 24,
+    "event_name": "卓克基会议",
+    "date": "1935-06",
+    "latitude": 31.67,
+    "longitude": 102.35,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "中共中央在卓克基召开会议，讨论一、四方面军会合后的战略方针问题。"
+  },
+  {
+    "id": 25,
+    "event_name": "毛儿盖会议",
+    "date": "1935-08",
+    "latitude": 32.58,
+    "longitude": 103.07,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "中共中央在四川毛儿盖召开政治局会议，确定红军主力分左右两路北上。"
+  },
+  {
+    "id": 26,
+    "event_name": "巴西会议",
+    "date": "1935-09",
+    "latitude": 34.12,
+    "longitude": 103.55,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "中共中央在甘肃巴西召开紧急会议，决定单独率领一、三军团北上，脱离张国焘的分裂活动。"
+  },
+  {
+    "id": 27,
+    "event_name": "榜罗镇会议",
+    "date": "1935-09",
+    "latitude": 34.85,
+    "longitude": 104.92,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "中共中央在甘肃榜罗镇召开政治局常委会议，决定把红军长征的落脚点放到陕北。"
+  },
+  {
+    "id": 28,
+    "event_name": "三大主力会师",
+    "date": "1936-10",
+    "latitude": 35.93,
+    "longitude": 105.57,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "红一、二、四方面军在甘肃会宁、静宁地区胜利会师，长征胜利结束。"
+  },
+  {
+    "id": 29,
+    "event_name": "山城堡战役",
+    "date": "1936-11",
+    "latitude": 36.58,
+    "longitude": 107.32,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "三大主力会师后，红军在甘肃山城堡击败国民党军胡宗南部，结束了长征最后一战。"
+  },
+  {
+    "id": 30,
+    "event_name": "红一方面军东征",
+    "date": "1936-02",
+    "latitude": 38.45,
+    "longitude": 112.72,
+    "panorama_url": "https://pannellum.org/images/cerro-toco-0.jpg",
+    "description": "红一方面军从陕北东渡黄河，进入山西作战，扩大了红军的影响力。"
+  }
+]
