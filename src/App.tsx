@@ -25,11 +25,11 @@ const ROUNDS = 5;
 const SECONDS = 30;
 
 function getRank(total: number): { title: string; emoji: string; desc: string } {
-  if (total >= 450) return { title: "长征通", emoji: "🌟", desc: "保留" };
-  if (total >= 380) return { title: "史料通晓者", emoji: "📚", desc: "强调对史料的熟悉" };
-  if (total >= 300) return { title: "地图解读者", emoji: "🗺", desc: "战术家改为中性能力描述" };
-  if (total >= 200) return { title: "历史爱好者", emoji: "🎖", desc: "温和" };
-  return { title: "初识长征", emoji: "🥔", desc: "避免歧义" };
+  if (total >= 450) return { title: "长征通", emoji: "🌟", desc: "对长征历史了如指掌" };
+  if (total >= 380) return { title: "史料通晓者", emoji: "📚", desc: "熟知每场战役的细节" };
+  if (total >= 300) return { title: "地图解读者", emoji: "🗺", desc: "能准确指出历史节点" };
+  if (total >= 200) return { title: "历史爱好者", emoji: "🎖", desc: "对长征有浓厚兴趣" };
+  return { title: "初识长征", emoji: "🥔", desc: "长征之路刚刚开始" };
 }
 
 function shuffle<T>(items: T[]): T[] {
