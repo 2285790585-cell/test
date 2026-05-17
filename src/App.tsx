@@ -135,7 +135,6 @@ export default function App() {
   if (screen === "home") {
     return (
       <div className="shell hero">
-        <div className="pill">纯前端演示工程 · 题库与规则可继续扩展</div>
         <h1>长征·时空谜踪</h1>
         <div className="divider" />
         <p>
