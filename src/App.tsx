@@ -4,6 +4,7 @@ import type { Question } from "./types/question";
 import { isoToMonthIndex, monthIndexToIso, TIMELINE_MONTH_COUNT } from "./lib/dates";
 import { haversineKm } from "./lib/geo";
 import { scoreRound, type RoundScore } from "./lib/scoring";
+import { panoramaSrc } from "./lib/assets";
 import { PanoramaViewer } from "./components/PanoramaViewer";
 import { MapPanel, type LngLat } from "./components/MapPanel";
 import { TimeSlider } from "./components/TimeSlider";
@@ -148,7 +149,10 @@ export default function App() {
   return (
     <div className="shell game">
       <section className="panorama-wrap">
-        <PanoramaViewer className="panorama-host" panoramaUrl={question.panorama_url} />
+        <PanoramaViewer
+          className="panorama-host"
+          panoramaUrl={panoramaSrc(`panoramas/${question.panorama_url.replace(/^panoramas\//, "")}`)}
+        />
       </section>
 
       <aside className="side">
