@@ -103,19 +103,15 @@ export default function App() {
   if (screen === "home") {
     return (
       <div className="shell hero">
-        <span className="hero__era">一九三四 — 一九三六</span>
-        <h1 className="hero__title">长征·时空谜踪</h1>
-        <p className="hero__subtitle">
-          透过历史场景影像，在地图上标定地点、在时间轴上锁定月份，还原红军长征的关键瞬间。
+        <div className="pill">纯前端演示工程 · 题库与规则可继续扩展</div>
+        <h1>长征·时空谜踪</h1>
+        <p>
+          一局 {ROUNDS} 题：观察全景图，在地图上点选地点，并用时间轴选择月份。每题{" "}
+          {SECONDS} 秒，提交后查看偏差与得分。
         </p>
-        <ul className="hero__rules">
-          <li>每局 {ROUNDS} 题，每题 {SECONDS} 秒</li>
-          <li>点击地图选点，拖动时间轴选月份</li>
-          <li>提交后查看偏差与史实解读</li>
-        </ul>
         <div className="btn-row">
           <button className="btn btn--primary" type="button" onClick={startGame}>
-            开始征程
+            开始游戏
           </button>
         </div>
       </div>
@@ -125,10 +121,9 @@ export default function App() {
   if (screen === "summary") {
     return (
       <div className="shell summary">
-        <span className="hero__era">征程告捷</span>
-        <h2>本局总成绩</h2>
+        <h2>本局结束</h2>
         <div className="score-big">{total.toFixed(1)}</div>
-        <p className="muted">五题得分累加 · 越接近史实越高分</p>
+        <p className="muted">以上为 {ROUNDS} 题得分总和（示例公式，可在代码中调整权重）。</p>
         <div className="btn-row">
           <button className="btn btn--primary" type="button" onClick={startGame}>
             再来一局
@@ -153,23 +148,22 @@ export default function App() {
 
   return (
     <div className="shell game">
-      <section className="panorama-section">
-        <div className="panorama-frame">
-          <header className="panorama-frame__head">
-            <h2 className="panorama-frame__title">{question.event_name}</h2>
-            <span className="panorama-frame__badge">
-              第 {qIdx + 1} / {ROUNDS} 题
-            </span>
-          </header>
-          <PanoramaViewer
-            className="panorama-host"
-            panoramaUrl={panoramaSrc(question.panorama_url)}
-            eventName={question.event_name}
-          />
-        </div>
+      <section className="panorama-wrap">
+        <PanoramaViewer
+          className="panorama-host"
+          panoramaUrl={panoramaSrc(question.panorama_url)}
+        />
       </section>
 
       <aside className="side">
+        <div className="card">
+          <div className="topbar">
+            <strong>
+              第 {qIdx + 1} / {ROUNDS} 题
+            </strong>
+          </div>
+        </div>
+
         <div className="floating">
           <CountdownBar
             roundKey={question.id}
@@ -189,7 +183,6 @@ export default function App() {
         </div>
 
         <div className="card">
-          <p className="card__label">长征时间轴</p>
           <TimeSlider
             value={monthIdx}
             onChange={setMonthIdx}
@@ -199,8 +192,7 @@ export default function App() {
           />
         </div>
 
-        <div className="card card--map">
-          <p className="card__label">地图选点</p>
+        <div className="card" style={{ padding: 8 }}>
           <MapPanel
             amapKey={amapKey}
             question={question}
@@ -209,11 +201,6 @@ export default function App() {
             truth={truth}
             onPick={phase === "answer" ? onPick : undefined}
           />
-          {phase === "answer" && !guess ? (
-            <p className="muted" style={{ margin: "8px 8px 0", fontSize: 12 }}>
-              点击地图标记你认为的事件发生位置
-            </p>
-          ) : null}
         </div>
 
         {phase === "feedback" && lastScore ? (
