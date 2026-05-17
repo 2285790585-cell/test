@@ -11,8 +11,26 @@ import { TimeSlider } from "./components/TimeSlider";
 import { CountdownBar } from "./components/CountdownBar";
 import { FeedbackPanel } from "./components/FeedbackPanel";
 
+type RoundResult = {
+  question: Question;
+  playerGuess: LngLat | null;
+  playerMonth: string;
+  truth: LngLat;
+  distanceKm: number;
+  monthDelta: number;
+  score: number;
+};
+
 const ROUNDS = 5;
 const SECONDS = 30;
+
+function getRank(total: number): { title: string; emoji: string; desc: string } {
+  if (total >= 450) return { title: "长征通", emoji: "🌟", desc: "保留" };
+  if (total >= 380) return { title: "史料通晓者", emoji: "📚", desc: "强调对史料的熟悉" };
+  if (total >= 300) return { title: "地图解读者", emoji: "🗺", desc: "战术家改为中性能力描述" };
+  if (total >= 200) return { title: "历史爱好者", emoji: "🎖", desc: "温和" };
+  return { title: "初识长征", emoji: "🥔", desc: "避免歧义" };
+}
 
 function shuffle<T>(items: T[]): T[] {
   const arr = [...items];
@@ -44,6 +62,7 @@ export default function App() {
   const [scores, setScores] = useState<number[]>([]);
   const [lastScore, setLastScore] = useState<RoundScore | null>(null);
   const [lastPlayerMonth, setLastPlayerMonth] = useState<string>("");
+  const [roundHistory, setRoundHistory] = useState<RoundResult[]>([]);
 
   const submittedRef = useRef(false);
 
@@ -63,6 +82,7 @@ export default function App() {
     setScores([]);
     setLastScore(null);
     setLastPlayerMonth("");
+    setRoundHistory([]);
     setScreen("play");
   };
 
@@ -80,6 +100,18 @@ export default function App() {
     setLastScore(s);
     setLastPlayerMonth(playerMonth);
     setScores((prev) => [...prev, s.total]);
+    setRoundHistory((prev) => [
+      ...prev,
+      {
+        question,
+        playerGuess: guess,
+        playerMonth,
+        truth,
+        distanceKm,
+        monthDelta: s.monthDelta,
+        score: s.total,
+      },
+    ]);
     setPhase("feedback");
   }, [guess, monthIdx, phase, question]);
 
@@ -120,17 +152,61 @@ export default function App() {
   }
 
   if (screen === "summary") {
+    const rank = getRank(total);
+    const totalDistance = roundHistory.reduce((sum, r) => sum + r.distanceKm, 0);
+    const totalMonthDelta = roundHistory.reduce((sum, r) => sum + r.monthDelta, 0);
     return (
-      <div className="shell summary">
-        <h2>本局结束</h2>
+      <div className="shell summary-page">
+        <h2 className="summary-title">本局结束</h2>
+        <div className="rank-display">
+           <span className="rank-emoji">{rank.emoji}</span>
+           <div className="rank-info">
+             <span className="rank-title">{rank.title}</span>
+             <span className="rank-desc">{rank.desc}</span>
+           </div>
+         </div>
         <div className="score-big">{total.toFixed(1)}</div>
-        <p className="muted score-hint">以上为 {ROUNDS} 题得分总和（示例公式，可在代码中调整权重）。</p>
-        <div className="progress-bar" style={{ justifyContent: "center" }}>
-          {scores.map((_, i) => (
-            <div key={i} className="progress-dot completed" />
+        <div className="total-stats">
+          <div className="total-stat">
+            <span className="stat-value">{totalDistance.toFixed(1)} km</span>
+            <span className="stat-label">总距离偏差</span>
+          </div>
+          <div className="total-stat">
+            <span className="stat-value">{totalMonthDelta}</span>
+            <span className="stat-label">总时间偏差（月）</span>
+          </div>
+        </div>
+        <div className="round-list">
+          {roundHistory.map((round, i) => (
+            <div key={i} className="round-card">
+              <div className="round-header">
+                <span className="round-num">第 {i + 1} 题</span>
+                <span className="round-score">+{round.score.toFixed(1)}</span>
+              </div>
+              <h3 className="round-event">{round.question.event_name}</h3>
+              <p className="round-desc">{round.question.description}</p>
+              <div className="round-details">
+                <div className="detail-row">
+                  <span className="detail-label">地点偏差</span>
+                  <span className="detail-value">{round.distanceKm.toFixed(1)} km</span>
+                </div>
+                <div className="detail-row">
+                  <span className="detail-label">时间偏差</span>
+                  <span className="detail-value">{round.monthDelta} 个月</span>
+                </div>
+                <div className="detail-row">
+                  <span className="detail-label">你的时间</span>
+                  <span className="detail-value highlight">{round.playerMonth}</span>
+                </div>
+                <div className="detail-row">
+                  <span className="detail-label">正确时间</span>
+                  <span className="detail-value correct">{round.question.date}</span>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
-        <div className="btn-row">
+        <div className="btn-row" style={{ marginTop: "24px" }}>
           <button className="btn btn--primary" type="button" onClick={startGame}>
             再来一局
           </button>
