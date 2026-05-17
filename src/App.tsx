@@ -105,6 +105,7 @@ export default function App() {
       <div className="shell hero">
         <div className="pill">纯前端演示工程 · 题库与规则可继续扩展</div>
         <h1>长征·时空谜踪</h1>
+        <div className="divider" />
         <p>
           一局 {ROUNDS} 题：观察全景图，在地图上点选地点，并用时间轴选择月份。每题{" "}
           {SECONDS} 秒，提交后查看偏差与得分。
@@ -123,7 +124,12 @@ export default function App() {
       <div className="shell summary">
         <h2>本局结束</h2>
         <div className="score-big">{total.toFixed(1)}</div>
-        <p className="muted">以上为 {ROUNDS} 题得分总和（示例公式，可在代码中调整权重）。</p>
+        <p className="muted score-hint">以上为 {ROUNDS} 题得分总和（示例公式，可在代码中调整权重）。</p>
+        <div className="progress-bar" style={{ justifyContent: "center" }}>
+          {scores.map((_, i) => (
+            <div key={i} className="progress-dot completed" />
+          ))}
+        </div>
         <div className="btn-row">
           <button className="btn btn--primary" type="button" onClick={startGame}>
             再来一局
@@ -161,6 +167,16 @@ export default function App() {
             <strong>
               第 {qIdx + 1} / {ROUNDS} 题
             </strong>
+            <div className="progress-bar">
+              {Array.from({ length: ROUNDS }, (_, i) => (
+                <div
+                  key={i}
+                  className={`progress-dot ${
+                    i < qIdx ? "completed" : i === qIdx ? "active" : ""
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
